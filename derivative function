@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+float f (float x){
+	return x*x+2*x+5 ;
+}
+float turev (float (*fonk)(float a),float x){
+	float h=0.1;
+	
+	return (fonk(x+h)-fonk(x-h))/(2*h);
+}
+	
+
+
+int main(int argc, char *argv[]) {
+	float x;
+	printf("bir x degeri giriniz\n");
+	scanf("%f",&x);
+	
+	printf("fonksiyonun degeri=%f\n",f(x));
+	printf("turevin degeri=%f",turev(f,x));
+
+    
+    
+
+	return 0;
+}
+
+
+
